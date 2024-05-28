@@ -34,7 +34,7 @@ O desafio consiste em implementar um e-commerce para venda de livros e deve ser 
 - Componentização
 - Fidelidade com design
 - Gerenciamento de estado
-- Padrão de código
+- Qualidade de código e arquitetura
 - Padrão de commits
 - Usabilidade
 
