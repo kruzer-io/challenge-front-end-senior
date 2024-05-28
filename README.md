@@ -21,8 +21,6 @@ O desafio consiste em implementar um e-commerce para venda de livros e deve ser 
   - Finalizar compra
 
 ### **Instruções:**
-- Crie um repositório publico no GitHub
-- Adiciona um arquivo README.md com instruções e informações sobre o projeto
 - Siga o design proposto no [protótipo](https://www.figma.com/design/1ChhNn0YKkMPpzxabI2Nf0/E-commerce?node-id=1-2&t=pJpSnQXk2wXZiXA4-1) (use a senha "**kruzer**" para acessar)
 - A aplicação deve ser responsiva
 - Desenvolve em React
@@ -46,3 +44,9 @@ O desafio consiste em implementar um e-commerce para venda de livros e deve ser 
 - Utilizar micro front ends
 - Acessibilidade
 - Internacionalização (ptBr e enUs)
+
+### **Entregáveis:**
+- Código fonte da aplicação hospedado em um repositório público no GitHub.
+- Instruções claras para rodar a aplicação localmente (de preferência no arquivo README).
+- Ao finalizar, enviar e-mail para **felipe.martins@krzlabs.io** com cópia para **andre.ciornavei@krzlabs.io** e **eduardo.fernandes@krzlabs.io**, notificando o término do desafio e com link para o repositório público.
+- Esse desafio deve ser entregue em até 7 dias após a entrevista inicial.
