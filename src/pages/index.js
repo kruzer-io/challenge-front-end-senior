@@ -1,26 +1,15 @@
-// src/pages/index.js
-"use client"; // Adicione essa linha no topo do arquivo
+"use client";
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
+import { allBooks } from 'contentlayer/generated';
 import Navbar from '../components/Navbar';
 import SearchBar from '../components/SearchBar';
 import CategoryFilter from '../components/CategoryFilter';
 import BookCard from '../components/BookCard';
 
-export default function Home() {
-    const [books, setBooks] = useState([]);
-    const [filteredBooks, setFilteredBooks] = useState([]);
-
-    useEffect(() => {
-        const fetchBooks = async () => {
-            const response = await fetch('/api/books');
-            const data = await response.json();
-            setBooks(data);
-            setFilteredBooks(data);
-        };
-
-        fetchBooks();
-    }, []);
+export default function Home({ initialBooks }) {
+    const [books] = useState(initialBooks);
+    const [filteredBooks, setFilteredBooks] = useState(initialBooks);
 
     const handleSearch = (query) => {
         const filtered = books.filter((book) =>
@@ -31,7 +20,8 @@ export default function Home() {
     };
 
     const handleSelectCategory = (category) => {
-        // Implemente a lógica de filtragem de categorias aqui
+        const filtered = books.filter((book) => book.category === category);
+        setFilteredBooks(filtered);
     };
 
     return (
@@ -48,4 +38,12 @@ export default function Home() {
             </div>
         </div>
     );
+}
+
+export async function getStaticProps() {
+    return {
+        props: {
+            initialBooks: allBooks,
+        },
+    };
 }
