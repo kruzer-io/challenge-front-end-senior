@@ -12,6 +12,7 @@ export default function Home({ initialBooks, currentPage, totalPages, searchQuer
     const router = useRouter();
     const [filteredBooks, setFilteredBooks] = useState(initialBooks);
     const [paginatedBooks, setPaginatedBooks] = useState(initialBooks);
+    const [sortOrder, setSortOrder] = useState('asc');
 
     useEffect(() => {
         let filtered = allBooks;
@@ -27,14 +28,20 @@ export default function Home({ initialBooks, currentPage, totalPages, searchQuer
             filtered = filtered.filter((book) => book.category === selectedCategory);
         }
 
+        if (sortOrder === 'asc') {
+            filtered.sort((a, b) => parseFloat(a.price.replace('R$', '').replace(',', '.')) - parseFloat(b.price.replace('R$', '').replace(',', '.')));
+        } else {
+            filtered.sort((a, b) => parseFloat(b.price.replace('R$', '').replace(',', '.')) - parseFloat(a.price.replace('R$', '').replace(',', '.')));
+        }
+
         setFilteredBooks(filtered);
-    }, [searchQuery, selectedCategory]);
+    }, [searchQuery, selectedCategory, sortOrder]);
 
     useEffect(() => {
         const start = (currentPage - 1) * BOOKS_PER_PAGE;
         const end = start + BOOKS_PER_PAGE;
         setPaginatedBooks(filteredBooks.slice(start, end));
-    }, [filteredBooks, currentPage]);
+    }, [filteredBooks, currentPage, sortOrder]);
 
     const handleSearch = (query) => {
         const filtered = allBooks.filter((book) =>
@@ -49,27 +56,38 @@ export default function Home({ initialBooks, currentPage, totalPages, searchQuer
     };
 
     const handleSelectCategory = (category) => {
-    let filtered;
-    if (selectedCategory === category) {
-        filtered = allBooks;
-        router.push({
-            pathname: '/',
-            query: { ...router.query, category: undefined, page: 1 },
-        });
-    } else {
-        filtered = allBooks.filter((book) => book.category === category);
-        router.push({
-            pathname: '/',
-            query: { ...router.query, category, page: 1 },
-        });
-    }
-    setFilteredBooks(filtered);
-};
+        let filtered;
+        if (selectedCategory === category) {
+            filtered = allBooks;
+            router.push({
+                pathname: '/',
+                query: { ...router.query, category: undefined, page: 1 },
+            });
+        } else {
+            filtered = allBooks.filter((book) => book.category === category);
+            router.push({
+                pathname: '/',
+                query: { ...router.query, category, page: 1 },
+            });
+        }
+        setFilteredBooks(filtered);
+    };
+
+    const handleSortOrderChange = (event) => {
+        setSortOrder(event.target.value);
+    };
 
     return (
         <>
             <SearchBar onSearch={handleSearch} initialQuery={searchQuery} />
             <CategoryFilter onSelectCategory={handleSelectCategory} selectedCategory={selectedCategory} />
+            <div className="flex justify-end mb-4">
+                <label htmlFor="sortOrder" className="mr-2">Ordenar por preço:</label>
+                <select id="sortOrder" value={sortOrder} onChange={handleSortOrderChange} className="border rounded p-2">
+                    <option value="asc">Ascendente</option>
+                    <option value="dsc">Descendente</option>
+                </select>
+            </div>
             <Pagination currentPage={currentPage} totalPages={totalPages} />
             <div className="flex flex-wrap">
                 {paginatedBooks.map((book) => (
@@ -101,7 +119,7 @@ export async function getServerSideProps(context) {
     }
 
     const totalPages = Math.ceil(filteredBooks.length / BOOKS_PER_PAGE);
-    const initialBooks = filteredBooks;
+    const initialBooks = filteredBooks.slice((page - 1) * BOOKS_PER_PAGE, page * BOOKS_PER_PAGE);
 
     return {
         props: {
