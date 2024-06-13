@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
+    const cart = useSelector((state) => state.cart);
+
     return (
         <nav className="bg-gray-800 p-4">
             <div className="container mx-auto flex justify-between items-center">
@@ -12,7 +15,7 @@ const Navbar = () => {
                         Home
                     </Link>
                     <Link href="/cart" className="text-gray-300 hover:text-white mx-4">
-                        Cart
+                        Cart ({cart.items.length})
                     </Link>
                 </div>
             </div>

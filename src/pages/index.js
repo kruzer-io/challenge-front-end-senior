@@ -70,6 +70,7 @@ export default function Home({ initialBooks, currentPage, totalPages, searchQuer
         <>
             <SearchBar onSearch={handleSearch} initialQuery={searchQuery} />
             <CategoryFilter onSelectCategory={handleSelectCategory} selectedCategory={selectedCategory} />
+            <Pagination currentPage={currentPage} totalPages={totalPages} />
             <div className="flex flex-wrap">
                 {paginatedBooks.map((book) => (
                     <div key={book.id} className="p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">

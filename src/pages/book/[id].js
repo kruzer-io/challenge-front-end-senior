@@ -4,6 +4,8 @@ import Link from 'next/link';
 import { useDispatch } from 'react-redux';
 import { addItemToCart } from '../../lib/slices/cartSlice';
 import { allBooks } from 'contentlayer/generated';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export default function BookDetail({ book }) {
     const router = useRouter();
@@ -19,6 +21,7 @@ export default function BookDetail({ book }) {
             title: book.title,
             price: parseFloat(book.price.replace('R$', '').replace(',', '.')),
         }));
+        toast.success('Produto adicionado ao carrinho!');
     };
 
     return (
@@ -43,6 +46,7 @@ export default function BookDetail({ book }) {
                     </button>
                 </div>
             </div>
+            <ToastContainer />
         </>
     );
 }
