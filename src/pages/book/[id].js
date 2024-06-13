@@ -1,13 +1,25 @@
 import { useRouter } from 'next/router';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useDispatch } from 'react-redux';
+import { addItemToCart } from '../../lib/slices/cartSlice';
 import { allBooks } from 'contentlayer/generated';
 
 export default function BookDetail({ book }) {
     const router = useRouter();
+    const dispatch = useDispatch();
+
     if (router.isFallback) {
         return <div>Loading...</div>;
     }
+
+    const addToCartHandler = () => {
+        dispatch(addItemToCart({
+            id: book.id,
+            title: book.title,
+            price: parseFloat(book.price.replace('R$', '').replace(',', '.')),
+        }));
+    };
 
     return (
         <div className="container mx-auto p-4">
@@ -26,7 +38,7 @@ export default function BookDetail({ book }) {
                     </div>
                     <p className="text-gray-600">Autores - {book.author}</p>
                     <p className="text-gray-600">Número de Páginas - {book.pages}</p>
-                    <button className="bg-blue-500 text-white px-4 py-2 mt-4 rounded-lg">
+                    <button onClick={addToCartHandler} className="bg-blue-500 text-white px-4 py-2 mt-4 rounded-lg">
                         Adicionar ao Carrinho
                     </button>
                 </div>

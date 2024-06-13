@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 const BookCard = ({ book }) => {
     return (
-        <div className="border rounded shadow p-4 m-2 w-1/4">
+        <div className="border rounded shadow p-4 w-full">
             <h2 className="text-xl font-bold">{book.title}</h2>
             <p className="text-gray-700">{book.author}</p>
             <p className="text-gray-700">{book.price}</p>

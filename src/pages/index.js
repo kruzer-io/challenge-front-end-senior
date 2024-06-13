@@ -32,7 +32,9 @@ export default function Home({ initialBooks }) {
                 <CategoryFilter onSelectCategory={handleSelectCategory} />
                 <div className="flex flex-wrap">
                     {filteredBooks.map((book) => (
-                        <BookCard key={book.id} book={book} />
+                        <div key={book.id} className="p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                            <BookCard key={book.id} book={book} />
+                        </div>
                     ))}
                 </div>
             </div>
