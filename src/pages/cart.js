@@ -1,5 +1,3 @@
-// src/pages/cart.js
-
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItemFromCart, clearCart } from '../lib/slices/cartSlice';
 import Link from 'next/link';
@@ -17,7 +15,7 @@ const CartPage = () => {
     };
 
     return (
-        <div className="container mx-auto p-4">
+        <>
             <h1 className="text-3xl font-bold mb-4">Carrinho de Compras</h1>
             {cart.items.length === 0 ? (
                 <p>O carrinho está vazio. <Link href="/" className="text-blue-500 hover:underline">Voltar às compras</Link></p>
@@ -52,7 +50,7 @@ const CartPage = () => {
                     </div>
                 </div>
             )}
-        </div>
+        </>
     );
 };
 

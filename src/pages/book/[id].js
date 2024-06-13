@@ -22,7 +22,7 @@ export default function BookDetail({ book }) {
     };
 
     return (
-        <div className="container mx-auto p-4">
+        <>
             <Link href="/" className="text-blue-500 hover:underline mb-4 block">
                 Voltar
             </Link>
@@ -43,7 +43,7 @@ export default function BookDetail({ book }) {
                     </button>
                 </div>
             </div>
-        </div>
+        </>
     );
 }
 
