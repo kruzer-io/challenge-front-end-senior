@@ -1,14 +1,22 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
 import { setSearchQuery } from '../lib/slices/searchSlice';
 
 const SearchBar = () => {
     const [query, setQuery] = useState('');
     const dispatch = useDispatch();
+    const router = useRouter();
 
     const handleSearch = () => {
         dispatch(setSearchQuery(query));
     };
+
+    useEffect(() => {
+        if (!router.query.search) {
+            setQuery('');
+        }
+    }, [router.query.search]);
 
     return (
         <div className="flex justify-center my-4">
