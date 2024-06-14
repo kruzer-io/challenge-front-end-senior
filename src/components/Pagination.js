@@ -13,7 +13,7 @@ const Pagination = ({ currentPage, totalPages }) => {
     };
 
     return (
-        <div className="flex justify-center mt-4">
+        <div className="flex justify-center mt-4 pb-[4rem]">
             {currentPage > 1 && (
                 <Link href={createPageLink(currentPage - 1)} className="px-4 py-2 mx-1 bg-gray-200 rounded">
                     Previous

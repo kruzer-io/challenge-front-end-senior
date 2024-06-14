@@ -15,7 +15,12 @@ const config: Config = {
       },
       colors: {
         customBackground: '#F0F0F5',
+        customBorder: '#DCE2E5',
+        customRed: '#DE3838',
       },
+      fontSize: {
+        '2xs': '0.625rem',
+      }
     },
   },
   plugins: [],

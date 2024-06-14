@@ -1,47 +1,19 @@
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 import { useRouter } from 'next/router';
 import { allBooks } from 'contentlayer/generated';
-import SearchBar from '../components/SearchBar';
 import CategoryFilter from '../components/CategoryFilter';
 import BookCard from '../components/BookCard';
 import Pagination from '../components/Pagination';
 
 const BOOKS_PER_PAGE = 8;
 
-export default function Home({ initialBooks, currentPage, totalPages, searchQuery, selectedCategory }) {
+export default function Home({ initialBooks, currentPage, totalPages, selectedCategory }) {
     const router = useRouter();
+    const searchQuery = useSelector((state) => state.search);
     const [filteredBooks, setFilteredBooks] = useState(initialBooks);
     const [paginatedBooks, setPaginatedBooks] = useState(initialBooks);
     const [sortOrder, setSortOrder] = useState('asc');
-
-    useEffect(() => {
-        let filtered = allBooks;
-
-        if (searchQuery) {
-            filtered = filtered.filter((book) =>
-                book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-                book.author.toLowerCase().includes(searchQuery.toLowerCase())
-            );
-        }
-
-        if (selectedCategory) {
-            filtered = filtered.filter((book) => book.category === selectedCategory);
-        }
-
-        if (sortOrder === 'asc') {
-            filtered.sort((a, b) => parseFloat(a.price.replace('R$', '').replace(',', '.')) - parseFloat(b.price.replace('R$', '').replace(',', '.')));
-        } else {
-            filtered.sort((a, b) => parseFloat(b.price.replace('R$', '').replace(',', '.')) - parseFloat(a.price.replace('R$', '').replace(',', '.')));
-        }
-
-        setFilteredBooks(filtered);
-    }, [searchQuery, selectedCategory, sortOrder]);
-
-    useEffect(() => {
-        const start = (currentPage - 1) * BOOKS_PER_PAGE;
-        const end = start + BOOKS_PER_PAGE;
-        setPaginatedBooks(filteredBooks.slice(start, end));
-    }, [filteredBooks, currentPage, sortOrder]);
 
     const handleSearch = (query) => {
         const filtered = allBooks.filter((book) =>
@@ -77,22 +49,56 @@ export default function Home({ initialBooks, currentPage, totalPages, searchQuer
         setSortOrder(event.target.value);
     };
 
+    useEffect(() => {
+        let filtered = allBooks;
+
+        if (searchQuery) {
+            filtered = filtered.filter((book) =>
+                book.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                book.author.toLowerCase().includes(searchQuery.toLowerCase())
+            );
+        }
+
+        if (selectedCategory) {
+            filtered = filtered.filter((book) => book.category === selectedCategory);
+        }
+
+        if (sortOrder === 'asc') {
+            filtered.sort((a, b) => parseFloat(a.price.replace('R$', '').replace(',', '.')) - parseFloat(b.price.replace('R$', '').replace(',', '.')));
+        } else {
+            filtered.sort((a, b) => parseFloat(b.price.replace('R$', '').replace(',', '.')) - parseFloat(a.price.replace('R$', '').replace(',', '.')));
+        }
+
+        setFilteredBooks(filtered);
+    }, [searchQuery, selectedCategory, sortOrder]);
+
+    useEffect(() => {
+        const start = (currentPage - 1) * BOOKS_PER_PAGE;
+        const end = start + BOOKS_PER_PAGE;
+        setPaginatedBooks(filteredBooks.slice(start, end));
+    }, [filteredBooks, currentPage, sortOrder]);
+
+    useEffect(() => {
+        handleSearch(searchQuery);
+    }, [searchQuery]);
+
     return (
         <>
-            <SearchBar onSearch={handleSearch} initialQuery={searchQuery} />
-            <CategoryFilter onSelectCategory={handleSelectCategory} selectedCategory={selectedCategory} />
-            <div className="flex justify-end mb-4">
-                <label htmlFor="sortOrder" className="mr-2">Ordenar por preço:</label>
-                <select id="sortOrder" value={sortOrder} onChange={handleSortOrderChange} className="border rounded p-2">
-                    <option value="asc">Ascendente</option>
-                    <option value="dsc">Descendente</option>
-                </select>
+            <div className="flex justify-between items-center mb-4">
+                <CategoryFilter onSelectCategory={handleSelectCategory} selectedCategory={selectedCategory} />
+
+                <div>
+                    <label htmlFor="sortOrder" className="mr-2">Ordenar por preço:</label>
+                    <select id="sortOrder" value={sortOrder} onChange={handleSortOrderChange} className="border rounded p-2">
+                        <option value="asc">Ascendente</option>
+                        <option value="dsc">Descendente</option>
+                    </select>
+                </div>
             </div>
-            <Pagination currentPage={currentPage} totalPages={totalPages} />
-            <div className="flex flex-wrap -m-2">
+            <div className="flex flex-wrap -mx-4 mb-[4rem]">
                 {paginatedBooks.map((book) => (
-                    <div key={book.id} className="p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
-                        <BookCard key={book.id} book={book} />
+                    <div key={book.id} className="p-4 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
+                        <BookCard key={book.id} book={book}/>
                     </div>
                 ))}
             </div>

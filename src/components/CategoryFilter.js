@@ -2,7 +2,7 @@ const categories = ['História', 'Filosofia', 'Romance', 'Direito'];
 
 const CategoryFilter = ({ onSelectCategory, selectedCategory }) => {
     return (
-        <div className="flex justify-center my-4">
+        <div className="flex justify-center my-4 -mx-2">
             {categories.map((category) => (
                 <button
                     key={category}

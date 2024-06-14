@@ -1,14 +1,14 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 const BookCard = ({ book }) => {
     return (
-        <div className="border rounded shadow p-4 w-full">
-            <img src={`/img/books/${book.image}`} alt={book.title} className="w-full h-48 object-cover mb-4 rounded" />
-            <h2 className="text-xl font-bold">{book.title}</h2>
-            <p className="text-gray-700">{book.author}</p>
-            <p className="text-gray-700">{book.price}</p>
-            <Link href={`/book/${book.id}`} className="text-blue-500 hover:underline">
-                View Details
+        <div className="rounded w-full bg-white">
+            <Link href={`/book/${book.id}`}>
+                <Image src={`/img/books/${book.image}`} alt={book.title} width={256} height={300} className="max-w-full h-[300px] object-cover rounded" />
+                <h2 className="px-3 my-2 line-clamp-1">{book.title}</h2>
+                <hr className="border-customBorder mx-3" />
+                <p className="px-3 py-2 font-bold">{book.price}</p>
             </Link>
         </div>
     );

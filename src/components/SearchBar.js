@@ -1,10 +1,13 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { setSearchQuery } from '../lib/slices/searchSlice';
 
-const SearchBar = ({ onSearch }) => {
+const SearchBar = () => {
     const [query, setQuery] = useState('');
+    const dispatch = useDispatch();
 
     const handleSearch = () => {
-        onSearch(query);
+        dispatch(setSearchQuery(query));
     };
 
     return (
@@ -13,11 +16,11 @@ const SearchBar = ({ onSearch }) => {
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
-                placeholder="Search by name or ISBN"
+                placeholder="Busque por nome ou ISBN"
                 className="border rounded-l px-4 py-2"
             />
             <button onClick={handleSearch} className="bg-blue-500 text-white rounded-r px-4 py-2">
-                Search
+                Buscar
             </button>
         </div>
     );
