@@ -7,4 +7,5 @@ isbn: 978-8567097220
 pages: 96
 category: Ficção
 description: Uma das obras mais traduzidas e lidas do mundo.
+image: o-pequeno-principe.jpg
 ---

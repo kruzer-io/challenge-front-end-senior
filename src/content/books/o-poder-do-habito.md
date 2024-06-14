@@ -7,4 +7,5 @@ isbn: 978-8539004119
 pages: 408
 category: Psicologia
 description: Porque fazemos o que fazemos na vida e nos negócios.
+image: o-poder-do-habito.jpg
 ---

@@ -30,7 +30,7 @@ export default function BookDetail({ book }) {
                 Voltar
             </Link>
             <div className="flex">
-                <Image src={book.image} alt={book.title} width={300} height={400} className="rounded-lg" />
+                <Image src={`/img/books/${book.image}`} alt={book.title} width={300} height={400} className="rounded-lg" />
                 <div className="ml-8">
                     <h1 className="text-3xl font-bold mb-2">{book.title}</h1>
                     <p className="text-lg font-semibold">{book.price}</p>

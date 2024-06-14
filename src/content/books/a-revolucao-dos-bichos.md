@@ -7,4 +7,5 @@ isbn: 978-8535909556
 pages: 152
 category: Ficção
 description: Uma alegoria política em forma de fábula.
+image: a-revolucao-dos-bichos.jpg
 ---

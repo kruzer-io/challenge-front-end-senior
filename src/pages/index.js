@@ -89,7 +89,7 @@ export default function Home({ initialBooks, currentPage, totalPages, searchQuer
                 </select>
             </div>
             <Pagination currentPage={currentPage} totalPages={totalPages} />
-            <div className="flex flex-wrap">
+            <div className="flex flex-wrap -m-2">
                 {paginatedBooks.map((book) => (
                     <div key={book.id} className="p-2 w-full sm:w-1/2 md:w-1/3 lg:w-1/4">
                         <BookCard key={book.id} book={book} />

@@ -7,4 +7,5 @@ isbn: 978-8535922562
 pages: 464
 category: História
 description: Uma narrativa eletrizante sobre a história da humanidade.
+image: sapiens.jpg
 ---

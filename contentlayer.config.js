@@ -12,6 +12,7 @@ export const Book = defineDocumentType(() => ({
         pages: { type: 'number', required: true },
         category: { type: 'string', required: true },
         description: { type: 'string', required: true },
+        image: { type: 'string', required: true },
     },
 }))
 

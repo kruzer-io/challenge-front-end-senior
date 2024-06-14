@@ -7,4 +7,5 @@ isbn: 978-8575422398
 pages: 312
 category: Filosofia
 description: Este é um livro sobre a psicologia do sucesso.
+image: mindset.jpg
 ---

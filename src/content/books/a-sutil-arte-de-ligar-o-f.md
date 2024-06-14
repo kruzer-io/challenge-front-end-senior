@@ -7,4 +7,5 @@ isbn: 978-8551002495
 pages: 224
 category: Autoajuda
 description: Uma abordagem contracultural para uma vida boa.
+image: a-sutil-arte.jpg
 ---

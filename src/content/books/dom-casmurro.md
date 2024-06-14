@@ -7,4 +7,5 @@ isbn: 978-8572323452
 pages: 256
 category: Literatura Brasileira
 description: Uma das obras-primas da literatura brasileira.
+image: dom-casmurro.jpg
 ---

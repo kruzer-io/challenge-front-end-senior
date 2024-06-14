@@ -7,4 +7,5 @@ isbn: 978-8532511011
 pages: 224
 category: Ficção
 description: O início da jornada mágica de Harry Potter.
+image: harry-potter.jpg
 ---

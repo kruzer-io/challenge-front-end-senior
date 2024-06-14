@@ -7,4 +7,5 @@ isbn: 978-0761160960
 pages: 600
 category: Matemática
 description: Anotações incríveis e divertidas para você aprender sobre o intrigante universo dos números e das formas geométricas.
+image: o-grande-livro.jpg
 ---
