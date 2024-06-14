@@ -1,52 +1,36 @@
-# **Kruzer - Desafio Front-End Sênior**
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-O objetivo deste desafio é avaliar suas habilidades de programação. Quando sua solução estiver pronta, envie por email o link do repositório para o nosso time avaliar, lembre-se de que o repositório deve ser público.
+## Getting Started
 
-O desafio consiste em implementar um e-commerce para venda de livros e deve ser desenvolvido em React.
+First, run the development server:
 
-- Um livro deve ter nome, descrição, autores, categoria, número de páginas, ISBN e preço.
-- Deve possuir uma página para listar os livros com paginação
-- Deve ser possível buscar por nome ou ISBN
-- Filtro de categorias. As categorias dispóniveis serão:
-   - História
-   - Filosofia
-   - Romance
-   - Direito
-- Ordenar por preço (menor ou maior)
-- Deve possuir uma página de detalhes do livro onde é possível adicionar itens ao carrinho
-- Carrinho:
-  - Resumo do pedido
-  - Lista de itens adicionados
-  - Possibilidade de remover ou adicionar itens
-  - Finalizar compra
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-### **Instruções:**
-- Siga o design proposto no [protótipo](https://www.figma.com/design/1ChhNn0YKkMPpzxabI2Nf0/E-commerce?node-id=1-2&t=pJpSnQXk2wXZiXA4-1) (use a senha "**kruzer**" para acessar)
-- A aplicação deve ser responsiva
-- Desenvolve em React
-- Faça testes unitários
-- A forma de estilização é livre porém aconselhamos a usar TailwindCSS
-- O retorno do payload na página de listagem de livros e página de detalhes poderá ser mockado, porém simule as chamadas como se fosse chamar uma API
-- Ao clicar em finalizar compra deverá limpar o carrinho, retornar a página inicial e mostrar um toastr de sucesso.
-- Sinta-se livre para adicionar qualquer outra funcionalidade ou melhorias
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-### **Critérios de avaliação:**
-- Componentização
-- Fidelidade com design
-- Gerenciamento de estado
-- Qualidade de código e arquitetura
-- Padrão de commits
-- Usabilidade
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### **Diferenciais:**
-- Cobertura de testes
-- Teste E2E
-- Utilizar micro front ends
-- Acessibilidade
-- Internacionalização (ptBr e enUs)
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-### **Entregáveis:**
-- Código fonte da aplicação hospedado em um repositório público no GitHub.
-- Instruções claras para rodar a aplicação localmente (de preferência no arquivo README).
-- Ao finalizar, enviar e-mail para **felipe.martins@kruzer.io** com cópia para **andre.ciornavei@kruzer.io** e **eduardo.fernandes@kruzer.io**, notificando o término do desafio e com link para o repositório público.
-- Esse desafio deve ser entregue em até 7 dias após a entrevista inicial.
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
