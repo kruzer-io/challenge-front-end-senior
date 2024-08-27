@@ -1,19 +1,21 @@
 # **Kruzer - Desafio Front-End Sênior**
 
-O objetivo deste desafio é avaliar suas habilidades de programação. Quando sua solução estiver pronta, envie por email o link do repositório para o nosso time avaliar, lembre-se de que o repositório deve ser público.
+* Utilize a lib de componentes de sua preferência, o objetivo do teste é entender como o problema será resolvido.
 
-### **Desafio:**
+## **Desafio:**
 Desenvolver um componente de drawer para criação de clientes em duas etapas.
 
-Step 1: Formulário com os dados do cliente (nome, sobrenome, CPF).
-Step 2: Lista dinâmica de observações, onde o usuário pode adicionar N inputs para preencher observações separadas.
+- **Step 1:** Formulário com os dados do cliente (nome, sobrenome, CPF).
+- **Step 2:** Lista dinâmica de observações, onde o usuário pode adicionar N inputs para preencher observações separadas.
+
 Após salvar o cliente, o mesmo deve ser automaticamente renderizado em uma listagem de clientes.
 
 ### **Requisitos Técnicos:**
 Jotai: Gerenciamento de estado.
 React Hook Forms: Gerenciamento do formulário e das observações dinâmicas.
 URL-State: Armazenamento de termos de busca e aplicação de filtros na listagem de clientes.
-Critérios de Avaliação:
+
+## Critérios de Avaliação:
 
 ### **Isolamento do Componente:**
 O drawer de criação de cliente deve ser um componente isolado, sem dependências com a listagem de clientes.
@@ -26,9 +28,8 @@ Não é necessária a persistência dos clientes em banco de dados ou local stor
 ### **Filtro de Clientes:**
 Implementar um campo de filtro por nome do cliente na listagem.
 O filtro deve atualizar o URL-State, refletindo o estado atual do filtro na URL e na listagem de clientes.
-Entrega:
 
-### **Entregáveis:**
+## **Entregáveis:**
 - Código fonte da aplicação hospedado em um repositório público no GitHub.
 - Instruções claras para rodar a aplicação localmente (de preferência no arquivo README).
 - Ao finalizar, enviar e-mail para **felipe.martins@kruzer.io** com cópia para **andre.ciornavei@kruzer.io**, notificando o término do desafio e com link para o repositório público.
