@@ -11,9 +11,9 @@ Desenvolver um componente de drawer para criação de clientes em duas etapas.
 Após salvar o cliente, o mesmo deve ser automaticamente renderizado em uma listagem de clientes.
 
 ### **Requisitos Técnicos:**
-Jotai: Gerenciamento de estado.
-React Hook Forms: Gerenciamento do formulário e das observações dinâmicas.
-URL-State: Armazenamento de termos de busca e aplicação de filtros na listagem de clientes.
+- **Jotai:** Gerenciamento de estado.
+- **React Hook Forms:** Gerenciamento do formulário e das observações dinâmicas.
+- **URL-State:** Armazenamento de termos de busca e aplicação de filtros na listagem de clientes.
 
 ## Critérios de Avaliação:
 
