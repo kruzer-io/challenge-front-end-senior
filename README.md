@@ -31,5 +31,5 @@ Entrega:
 ### **Entregáveis:**
 - Código fonte da aplicação hospedado em um repositório público no GitHub.
 - Instruções claras para rodar a aplicação localmente (de preferência no arquivo README).
-- Ao finalizar, enviar e-mail para **felipe.martins@kruzer.io** com cópia para **andre.ciornavei@kruzer.io** e **eduardo.fernandes@kruzer.io**, notificando o término do desafio e com link para o repositório público.
+- Ao finalizar, enviar e-mail para **felipe.martins@kruzer.io** com cópia para **andre.ciornavei@kruzer.io**, notificando o término do desafio e com link para o repositório público.
 - Esse desafio deve ser entregue em até 7 dias após a entrevista inicial.
