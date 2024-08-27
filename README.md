@@ -2,48 +2,31 @@
 
 O objetivo deste desafio é avaliar suas habilidades de programação. Quando sua solução estiver pronta, envie por email o link do repositório para o nosso time avaliar, lembre-se de que o repositório deve ser público.
 
-O desafio consiste em implementar um e-commerce para venda de livros e deve ser desenvolvido em React.
+### **Desafio:**
+Desenvolver um componente de drawer para criação de clientes em duas etapas.
 
-- Um livro deve ter nome, descrição, autores, categoria, número de páginas, ISBN e preço.
-- Deve possuir uma página para listar os livros com paginação
-- Deve ser possível buscar por nome ou ISBN
-- Filtro de categorias. As categorias dispóniveis serão:
-   - História
-   - Filosofia
-   - Romance
-   - Direito
-- Ordenar por preço (menor ou maior)
-- Deve possuir uma página de detalhes do livro onde é possível adicionar itens ao carrinho
-- Carrinho:
-  - Resumo do pedido
-  - Lista de itens adicionados
-  - Possibilidade de remover ou adicionar itens
-  - Finalizar compra
+Step 1: Formulário com os dados do cliente (nome, sobrenome, CPF).
+Step 2: Lista dinâmica de observações, onde o usuário pode adicionar N inputs para preencher observações separadas.
+Após salvar o cliente, o mesmo deve ser automaticamente renderizado em uma listagem de clientes.
 
-### **Instruções:**
-- Siga o design proposto no [protótipo](https://www.figma.com/design/1ChhNn0YKkMPpzxabI2Nf0/E-commerce?node-id=1-2&t=pJpSnQXk2wXZiXA4-1) (use a senha "**kruzer**" para acessar)
-- A aplicação deve ser responsiva
-- Desenvolve em React
-- Faça testes unitários
-- A forma de estilização é livre porém aconselhamos a usar TailwindCSS
-- O retorno do payload na página de listagem de livros e página de detalhes poderá ser mockado, porém simule as chamadas como se fosse chamar uma API
-- Ao clicar em finalizar compra deverá limpar o carrinho, retornar a página inicial e mostrar um toastr de sucesso.
-- Sinta-se livre para adicionar qualquer outra funcionalidade ou melhorias
+### **Requisitos Técnicos:**
+Jotai: Gerenciamento de estado.
+React Hook Forms: Gerenciamento do formulário e das observações dinâmicas.
+URL-State: Armazenamento de termos de busca e aplicação de filtros na listagem de clientes.
+Critérios de Avaliação:
 
-### **Critérios de avaliação:**
-- Componentização
-- Fidelidade com design
-- Gerenciamento de estado
-- Qualidade de código e arquitetura
-- Padrão de commits
-- Usabilidade
+### **Isolamento do Componente:**
+O drawer de criação de cliente deve ser um componente isolado, sem dependências com a listagem de clientes.
+O componente deve ser reutilizável em qualquer parte do sistema, permitindo que qualquer outro componente o chame e receba o novo cliente como retorno.
 
-### **Diferenciais:**
-- Cobertura de testes
-- Teste E2E
-- Utilizar micro front ends
-- Acessibilidade
-- Internacionalização (ptBr e enUs)
+### **Listagem de Clientes:**
+Os clientes criados devem ser exibidos na listagem automaticamente após a criação.
+Não é necessária a persistência dos clientes em banco de dados ou local storage; apenas o gerenciamento de estado é necessário.
+
+### **Filtro de Clientes:**
+Implementar um campo de filtro por nome do cliente na listagem.
+O filtro deve atualizar o URL-State, refletindo o estado atual do filtro na URL e na listagem de clientes.
+Entrega:
 
 ### **Entregáveis:**
 - Código fonte da aplicação hospedado em um repositório público no GitHub.
