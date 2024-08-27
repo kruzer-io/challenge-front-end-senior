@@ -27,7 +27,7 @@ Não é necessária a persistência dos clientes em banco de dados ou local stor
 
 ### **Filtro de Clientes:**
 Implementar um campo de filtro por nome do cliente na listagem.
-O filtro deve atualizar o URL-State, refletindo o estado atual do input na URL; O url-state deve aplicar o filtro na listagem de clientes como consequência.
+O filtro deve atualizar o URL-State, refletindo o estado atual do input na URL; O Url-State deve, por sua vêz, aplicar o filtro na listagem de clientes.
 
 ## **Entregáveis:**
 - Código fonte da aplicação hospedado em um repositório público no GitHub.
