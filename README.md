@@ -1,6 +1,6 @@
 # **Kruzer - Desafio Front-End Sênior**
 
-* Utilize a lib de componentes de sua preferência, o objetivo do teste é entender como o problema será resolvido.
+Utilize a lib de componentes de sua preferência, o objetivo do teste é entender como o problema será resolvido.
 
 ## **Desafio:**
 Desenvolver um componente de drawer para criação de clientes em duas etapas.
