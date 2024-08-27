@@ -18,16 +18,17 @@ Após salvar o cliente, o mesmo deve ser automaticamente renderizado em uma list
 ## Critérios de Avaliação:
 
 ### **Isolamento do Componente:**
-O drawer de criação de cliente deve ser um componente isolado, sem dependências com a listagem de clientes.
-O componente deve ser reutilizável em qualquer parte do sistema, permitindo que qualquer outro componente o chame e receba o novo cliente como retorno.
+1 - O drawer de criação de cliente deve ser um componente isolado, sem dependências com a listagem de clientes.
+2 - O componente deve ser reutilizável em qualquer parte do sistema, permitindo que qualquer outro componente o chame e receba o novo cliente como retorno.
 
 ### **Listagem de Clientes:**
-Os clientes criados devem ser exibidos na listagem automaticamente após a criação.
-Não é necessária a persistência dos clientes em banco de dados ou local storage; apenas o gerenciamento de estado é necessário.
+1 - Os clientes criados devem ser exibidos na listagem automaticamente após a criação.
+2 - Não é necessária a persistência dos clientes em banco de dados ou local storage; apenas o gerenciamento de estado é necessário.
 
 ### **Filtro de Clientes:**
-Implementar um campo de filtro por nome do cliente na listagem.
-O filtro deve atualizar o URL-State, refletindo o estado atual do input na URL; O Url-State deve, por sua vêz, aplicar o filtro na listagem de clientes.
+1 - Implementar um campo de filtro por nome do cliente na listagem;
+2 - O filtro deve atualizar o URL-State, refletindo o estado atual do input na URL;
+3 - O Url-State deve, por sua vêz, aplicar o filtro na listagem de clientes.
 
 ## **Entregáveis:**
 - Código fonte da aplicação hospedado em um repositório público no GitHub.
