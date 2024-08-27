@@ -27,10 +27,10 @@ Não é necessária a persistência dos clientes em banco de dados ou local stor
 
 ### **Filtro de Clientes:**
 Implementar um campo de filtro por nome do cliente na listagem.
-O filtro deve atualizar o URL-State, refletindo o estado atual do filtro na URL e na listagem de clientes.
+O filtro deve atualizar o URL-State, refletindo o estado atual do input na URL; O url-state deve aplicar o filtro na listagem de clientes como consequência.
 
 ## **Entregáveis:**
 - Código fonte da aplicação hospedado em um repositório público no GitHub.
 - Instruções claras para rodar a aplicação localmente (de preferência no arquivo README).
 - Ao finalizar, enviar e-mail para **felipe.martins@kruzer.io** com cópia para **andre.ciornavei@kruzer.io**, notificando o término do desafio e com link para o repositório público.
-- Esse desafio deve ser entregue em até 7 dias após a entrevista inicial.
+- Esse desafio deve ser entregue em até 2 dias após ser submetido ao condidato.
